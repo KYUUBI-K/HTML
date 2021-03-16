@@ -1,0 +1,34 @@
+a {
+    
+    color:black;
+    width: 100px;
+    height: 60px;
+    border-radius: 5px;
+    position: relative;
+    display:-webkit-inline-flex;
+    left: 38%;
+    text-decoration: none; 
+    justify-content: center ;    
+    align-items: center;    
+}
+.back_color{
+    background-color: green;
+    height: 60px;
+    width: 105%;
+    right: 10px;
+    position: relative;
+    bottom: 10px;
+}
+a:hover{
+    background-color: black;
+    color:red;
+
+}
+.imag img{
+    position: relative;
+    left: 300px;
+    width: 100px;
+    height: 100px;
+    margin-inline: 50px;
+
+}   
