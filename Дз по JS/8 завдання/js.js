@@ -1,0 +1,8 @@
+let arr = ['Іван','Іван','Оля','Таня'];
+var i, count = 0, len = arr.length;
+function myFunc(){
+    for(i = 0; i < len; i++)
+        if(arr[i] == 'Іван')
+            count++;
+    return count;}
+alert('Іван зустрічається '+ count   +' разів')
