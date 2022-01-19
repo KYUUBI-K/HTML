@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div id="checker">
+        
+    </div>
+    <script>
+        var checker = new Vue({
+        el: '#checker',
+        data: {
+          number1:Math.floor(Math.random()*10),
+          number2:Math.floor(Math.random()*10),
+          sum:0,
+          true:0,
+          false:0
+        },
+          methods:{
+            getSum()
+            {
+                if(this.sum == this.number1+this.number2)
+                {
+                    true+=1
+                }
+                false+=1
+            }
+        }
+    })           
+            
+    </script>
+</body>
+</html>

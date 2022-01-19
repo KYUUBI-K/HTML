@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/vue"></script>   
+</head>
+<body>
+    <!-- <div id="app">
+       <input type="search" v-model="search">
+       <ul>
+           <li v-for="item in Filterlist", key="item.id"></li>
+           <p>{{item.title}}</p>
+           <p>{{item.car_brand}}</p>
+           <p>{{item.year_of_issue}}</p>
+
+       </ul>
+      </div>
+</body>
+<script>
+    var app = new Vue({
+  el: '#app',
+    data: {
+    search:"",
+    taskList:[
+        {
+            id:1,
+            title:'Бензонасос',
+            car_brand:'Mercedes',
+            year_of_issue:2014
+        },
+        {
+            id:2,
+            title:'Шарова',
+            car_brand:'BMW',
+            year_of_issue:2017
+        },
+        {
+            id:3,
+            title:'Тормозні діски',
+            car_brand:'Audi',
+            year_of_issue:2021
+        }
+    ]
+  },
+    computed: {
+        Filterlist() {
+            return this.taskList.filter(elem=>{return elem.car_brand.includes(this.search)}) 
+        }
+    },  
+})
+</script> -->
+<div id="app">
+    <p><input type="text" v-model="search" /></p>
+    <ul>
+      <li v-for="item in filteredList">
+        <p>{{ item.title }} - {{ item.company }} - {{item.year_of_issue}}</p>
+    </li>
+    </ul>
+</div>
+<script src="https://unpkg.com/vue"></script>
+<script>
+    var app = new Vue({
+        el: '#app',
+        data: {
+            search: '',
+            Tasklist: [
+                {title:'Шарова', company:'BMW',year_of_issue:2014}, 
+                {title:'Тормозні діски', company:'Mercedes',year_of_issue:2017},
+                {title:'Бензонасос', company:'Audi',year_of_issue:2021},
+            ]
+        },
+        computed:{
+            filteredList(){
+                var search = this.search;
+                return this.Tasklist.filter(function (elem) {
+                 
+                    // if(comp==='') return true;
+                    return elem.company.indexOf(search);
+                })
+            },
+        }
+    });
+</script>
+</html>

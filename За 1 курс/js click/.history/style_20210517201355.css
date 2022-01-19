@@ -1,0 +1,78 @@
+.body
+{
+    background-color: brown;
+}
+
+.grid
+{
+    display: grid;
+    grid-template-columns: 1000px;
+    grid-template-rows: 100px 90px 61px 61px 61px 90px;
+    background-color: white;
+    width: 1000px;
+
+    margin-left: 450px;
+    margin-top: 170px;
+    border-radius: 10px;
+}
+
+.buttons1
+{
+    width: 950px;
+    margin-top: 31px;
+    margin-left: 25px;
+    height: 60px;
+    border-radius: 10px;
+    border: none;
+    background-color: white;
+   
+    transition: background ;
+}
+
+.buttons1:focus
+{
+    background-color: rgb(236, 236, 236);
+}
+
+.buttons2
+{
+    width: 950px;
+    margin-top: 2px;
+    margin-left: 25px;
+    height: 60px;
+    border-radius: 10px;
+    border: none;
+    background-color: white;
+    transition: background ;
+}  
+
+.buttons2:focus
+{
+    background-color: rgb(236, 236, 236);
+}
+
+.text
+{
+    position: absolute;
+    margin-top: -10px;
+    margin-left: 10px;
+    font-size: 25px;
+}
+
+.Text
+{
+    position: absolute;
+    font-size: 25px;
+    margin-top: 50px;
+    margin-left: 40px;
+}
+hr
+{
+    border: none;
+    background-color: lightgray;
+     width: 915px;
+    height: 2px;
+    margin-top: 115px;
+    margin-left: 40px;
+    position: absolute;
+}

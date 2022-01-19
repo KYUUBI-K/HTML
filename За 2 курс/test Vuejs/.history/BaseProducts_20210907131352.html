@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <label>
+        Назва
+        <input type="text" v-model="title" /> </label
+      ><br />
+      <label>
+        Ціна
+        <input type="number" v-model.number="price" /> </label
+      ><br />
+      <button @click="onProductAdd">Додати</button>
+      <hr />
+      <table>
+        <thead>
+          <tr>
+            <th>№</th>
+            <th>Назва</th>
+            <th>Ціна</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr v-for="(product.index) in productList" :key="product.id">
+            <td>{{index+1}}</td>
+            <td>{{product.title}}</td>
+            <td>{{product.price}}</td>
+          </tr>
+        </tbody>
+      </table>
+      <div>Загальна сума:{{TotalSum}}</div>
+    </div>
+    <script>
+      var app = new Vue({
+        el: "#app",
+        // data: {
+        //   title: null,
+        //   price: null,
+        //   productList: [
+        //     {
+        //       id: 1,
+        //       title: "Rice",
+        //       price: 43,
+        //     },
+        //     {
+        //       id: 2,
+        //       title: "bread",
+        //       price: 15,
+        //     },
+        //   ]
+        // },
+        computed: {
+          TotalSum() {
+            return this.productList.reduce(
+              (prevSum, prod) => prevSum + prod.price,
+              0
+            );
+          },
+        },
+        methods: {
+          onProductAdd() {
+            this.productList.push({
+              id: new Date().getTime(),
+              title: this.title,
+              price: this.price,
+            });
+          },
+        },
+      });
+    </script>
+  </body>
+</html>

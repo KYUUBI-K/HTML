@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <div>
+            <label>
+                Ім'я
+                <input type="text" v-model="name" /> </label
+              ><br />
+              <label>
+                Клас
+                <input type="number" v-model.number="clas" /> 
+            </label><br />
+                <label>
+                    Стать
+                    <input type="text" v-model="sex"/> 
+                </label><br />
+                <label>
+                    Рік народження
+                    <input type="number" v-model.number="burnDate"/> 
+                </label><br />
+              <button @click="AddStud">Додати</button>
+        </div>
+        <div>
+            <table>
+                <tr v-for="(student,index) in studentList" :key="student.id">
+                  <td>{{index+1}}</td>
+                  <td>Ім'я:{{student.name}}</td>
+                  <td>Клас:{{student.clas}}</td>
+                  <td>Дата народження:{{student.burnDate}}</td>
+                  <td>Стать:{{student.sex}}</td>
+                </tr>
+            </table>
+            <div>Хлопців:{{Checkerboys}}</div>
+            <div>Дівчат:{{Checkergirls}}</div>
+        </div>
+    </div>
+    <script>
+        var app = new Vue({
+        el: "#app",
+        data: {
+          name: null,
+          clas: 0,
+          burnDate:0,
+          sex:null,
+          studentList: [
+            {
+                id:1,
+              name: 'Антон Марко Олександрович',
+              clas: 11,
+              burnDate:2002,
+              sex:"Чоловік"
+            }
+          ]
+        },
+        methods:{
+            AddStud(){
+                this.studentList.push({
+                    id:new Date().getTime(),
+                    name:this.name,
+                    clas:this.clas,
+                    burnDate:this.burnDate,
+                    sex:this.sex
+                })
+            }
+        },
+        //Непрацює
+        // computed:{
+        //     Checkerboys(){
+        //         boys:0
+        //         if(this.sex = 'чоловік')
+        //         return boys++
+        //     },
+        //     Checkergirls(){
+        //         girls:0
+        //         if(this.sex = 'жінка')
+        //         return girls++
+        //     }
+
+        }
+    })
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div id="checker">
+        <div>
+        <label>
+            number1
+            <input type="text" v-model.number=number1>
+        </label>
+        </div>
+        <div>
+        <label>
+            number2
+            <input type="text" v-model.number=number2>
+        </label>
+        </div>
+    </div>
+    <script>
+        var checker = new Vue({
+        el: '#checker',
+        data: {
+          number1:Math.floor(Math.random()*10),
+          number2:Math.floor(Math.random()*10),
+          sum:0,
+          corect:0,
+          incorect:0
+        },
+          methods:{
+            getSum()
+            {
+                if(this.sum == this.number1+this.number2)
+                {
+                    this.corect+=1
+                }
+                this.incorect+=1
+            }
+        }
+    })           
+            
+    </script>
+</body>
+</html>

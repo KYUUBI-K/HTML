@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+</head>
+<body>
+    <div id="checker">
+        <div>
+            <input type="checkbox" id="some_checkbox" />
+            Чоловік
+            <input type="checkbox" id="some_checkbox" />
+            Жінка
+        </div>
+    </div>
+    <script>
+        var app = new Vue({
+        el: "#app",
+        data: {
+          name: null,
+          class: null,
+          burn_date:0,
+          sex:null,
+          studentList: [
+            {
+              name: 'Антон Марко Олександрович',
+              class: 11,
+              burn_date:2002,
+            },
+            {
+              id: 2,
+              title: "Хліб",
+              price: 15,
+            },
+          ]
+        }
+    })
+
+    </script>
+</body>
+</html>

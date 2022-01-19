@@ -1,0 +1,46 @@
+body{
+    margin: 0;
+    font-family: Tahoma,sans-serif;
+    font-size: 16px;
+}
+    
+*,
+*::before,
+*::after{
+box-sizing: border-box;
+}
+    .header,
+    {
+        padding: 10px;
+        background-color: green;
+    }
+.content{
+    max-width: 800px;
+    margin:  auto;
+    padding: 40px 20px;
+    position: absolute;
+}
+
+
+.page{
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+.bottom aside, .bottom footer {
+    width: 50%;
+    float: left;
+    height: 100%;
+}
+.img img{
+    width: 100px;
+    height: 100px;
+    margin: auto;
+}
+
+.sign {
+    padding: 8px;
+   }
+
+

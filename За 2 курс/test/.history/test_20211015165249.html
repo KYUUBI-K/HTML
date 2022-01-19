@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <p><input type="text" v-model="car_band" /></p>
+    <ul>
+      <li v-for="taskList in filteredList">
+        <p>{{ taskList.title }} - {{ taskList.car_band }}</p>
+    </li>
+    </ul>
+      </div>
+</body>
+<script>
+    var app = new Vue({
+  el: '#app',
+  data: {
+    taskList:[
+        {
+            id:1,
+            title:'Бензонасос',
+            car_brand:'Mercedes',
+            year_of_issue:2014
+        },
+        {
+            id:2,
+            title:'Шарова',
+            car_brand:'BMW',
+            year_of_issue:2017
+        },
+        {
+            id:3,
+            title:'Тормозні діски',
+            car_brand:'Audi',
+            year_of_issue:2021
+        }
+    ]
+  },
+  computed:{
+            filteredList: function(){
+                var comp = this.car_brand;
+                return this.taskList.filter(function (elem) {
+                 
+                    if(comp==='') return true;
+                    else return elem.car_brand.indexOf(comp) > -1;
+                })
+            }
+        }
+})
+</script>
+</html>
